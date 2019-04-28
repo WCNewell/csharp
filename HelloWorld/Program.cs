@@ -15,12 +15,12 @@ namespace HelloWorld
 
             // var can also be used and c# compiler will detect the data type
 
-            byte number = 2;
-            int count = 10;
-            float totalPrice = 20.95f;
-            char character = 'A';
-            string firstName = "Clark";
-            bool isWorking = false;
+            var number = 2;
+            var count = 10;
+            var totalPrice = 20.95f;
+            var character = 'A';
+            var firstName = "Clark";
+            var isWorking = false;
 
             Console.WriteLine(number);
             Console.WriteLine(count);
