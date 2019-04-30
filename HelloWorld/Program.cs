@@ -5,13 +5,31 @@ namespace HelloWorld
 {
     class Program
     {
+
+        public class Person
+        {
+            public string FirstName;
+            public string LastName;
+
+            public void Introduce()
+            {
+                Console.WriteLine("My name is " + FirstName + " " + LastName);
+            }
+        }
+
         static void Main(string[] args)
         {
-            var a = 10;
-            var b = 3;
+            
+            var clark = new Person();
+            clark.FirstName = "Clark";
+            clark.LastName = "Newell";
+            clark.Introduce();
 
-            Console.WriteLine((float)a / (float)b);
 
+            //var a = 10;
+            //var b = 3;
+
+            //Console.WriteLine((float)a / (float)b);
 
             //try
             //{
