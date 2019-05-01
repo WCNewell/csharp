@@ -1,29 +1,80 @@
 ﻿using System;
+using System.Text;
+using HelloWorld.Math;
 using Microsoft.SqlServer.Server;
 
 namespace HelloWorld
 {
-    class Program
+    public enum ShippingMethod
     {
+        RegularAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
 
-        public class Person
-        {
-            public string FirstName;
-            public string LastName;
-
-            public void Introduce()
-            {
-                Console.WriteLine("My name is " + FirstName + " " + LastName);
-            }
-        }
-
+    partial class Program
+    {
         static void Main(string[] args)
         {
-            
-            var clark = new Person();
-            clark.FirstName = "Clark";
-            clark.LastName = "Newell";
-            clark.Introduce();
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int) method);
+
+            // below is an example of "casting":
+
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId);
+
+            Console.WriteLine(method.ToString());
+
+            //^^ FYI, Console.WriteLine always converts whatever you pass to it into a string anyway
+
+            //var firstName = "William";
+            //var lastName = "Newell";
+
+            //var fullName = firstName + " " + lastName;
+
+            //// or the above ^^ could also be written as:
+
+            //var myFullName = string.Format("My name is {0} {1}", firstName, lastName);
+
+            //var names = new string[3] {"Jack", "John", "Mary"};
+            //var formattedNames = string.Join(", ", names);
+            //Console.WriteLine(formattedNames);
+
+
+            //var firstName = "William";
+            //String lastName = "Newell";
+            //string middleName = "Clark";
+
+            //^^All of these are different ways of declaring a string
+            // Similarly, Int32 i and int i are the same thing as well
+
+
+            //var numbers = new int[3];
+            //numbers[0] = 1;
+
+            //Console.WriteLine(numbers[0]);
+            //Console.WriteLine(numbers[1]);
+            //Console.WriteLine(numbers[2]);
+
+            //var flags = new bool[3];
+            //flags[0] = true;
+
+            //Console.WriteLine(flags[0]);
+            //Console.WriteLine(flags[1]);
+            //Console.WriteLine(flags[2]);
+
+            //var names = new string[3] {"Jack", "John", "Mary"};
+
+
+            //var clark = new Person();
+            //clark.FirstName = "Clark";
+            //clark.LastName = "Newell";
+            //clark.Introduce();
+
+            //Calculator calculator = new Calculator();
+            //var result = calculator.Add(1, 2);
+            //Console.WriteLine(result);
 
 
             //var a = 10;
