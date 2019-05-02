@@ -16,17 +16,32 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var method = ShippingMethod.Express;
-            Console.WriteLine((int) method);
+            var a = 10;
+            var b = a;
+            b++;
+            Console.WriteLine(string.Format("a: {0}, b: {1}", a, b));
 
-            // below is an example of "casting":
+            var array1 = new int[3] {1, 2, 3};
 
-            var methodId = 3;
-            Console.WriteLine((ShippingMethod)methodId);
 
-            Console.WriteLine(method.ToString());
 
-            //^^ FYI, Console.WriteLine always converts whatever you pass to it into a string anyway
+
+            //var method = ShippingMethod.Express;
+            //Console.WriteLine((int) method);
+
+            //// below is an example of "casting":
+
+            //var methodId = 3;
+            //Console.WriteLine((ShippingMethod)methodId);
+
+            //Console.WriteLine(method.ToString());
+
+            ////^^ FYI, Console.WriteLine always converts whatever you pass to it into a string anyway
+
+            //var methodName = "Express";
+
+            //// This is how you convert or parse a string into an Enumeration:
+            //var shippingMethod = (ShippingMethod) Enum.Parse(typeof(ShippingMethod), methodName);
 
             //var firstName = "William";
             //var lastName = "Newell";
