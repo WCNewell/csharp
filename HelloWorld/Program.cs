@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using HelloWorld.Math;
@@ -13,23 +14,68 @@ namespace HelloWorld
     //    Express = 3
     //}
 
-    public class Person
-    {
-        public int Age;
-    }
+    //public class Person
+    //{
+    //    public int Age;
+    //}
 
     partial class Program
     {
         static void Main(string[] args)
         {
+            var season = Season.Autumn;
 
-            var number = 1;
-            Increment(number);
-            Console.WriteLine(number);
+            switch (season)
+            {
+                case Season.Autumn:
+                case Season.Summer:
+                    Console.WriteLine("Some like it sunny");
+                    break;
 
-            var person = new Person() {Age = 20};
-            MakeOld(person);
-            Console.WriteLine(person.Age);
+                default:
+                    Console.WriteLine("The other two seasons are very wet");
+                    break;
+            }
+
+
+            //bool isGoldCustomer = true;
+
+            ////float price;
+            ////if (isGoldCustomer)
+            ////{
+            ////    price = 19.95f;
+
+            ////}
+            ////else
+            ////{
+            ////    price = 29.99f;
+            ////}
+
+            //float price = (isGoldCustomer) ? 19.95f : 29.95f;
+            //Console.WriteLine(price);
+
+            //int hour = 19;
+
+            //if (hour > 0 && hour < 12)
+            //{
+            //    Console.WriteLine("It's morning!");
+            //}   
+            //else if (hour >= 12 && hour < 18)
+            //{
+            //    Console.WriteLine("It's afternoon");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("It's evening");
+            //}
+
+            //var number = 1;
+            //Increment(number);
+            //Console.WriteLine(number);
+
+            //var person = new Person() {Age = 20};
+            //MakeOld(person);
+            //Console.WriteLine(person.Age);
 
             //var a = 10;
             //var b = a;
@@ -141,14 +187,14 @@ namespace HelloWorld
             //bool isWorking = false;
         }
 
-        public static void Increment(int number)
-        {
-            number += 10;
-        }
+        //public static void Increment(int number)
+        //{
+        //    number += 10;
+        //}
 
-        public static void MakeOld(Person person)
-        {
-            person.Age += 10;
-        }
+        //public static void MakeOld(Person person)
+        //{
+        //    person.Age += 10;
+        //}
     }
 }
