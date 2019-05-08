@@ -2,6 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Xml;
 using HelloWorld.Math;
 using Microsoft.SqlServer.Server;
 
@@ -23,17 +24,63 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var random = new Random();
+            var numbers = new[] { 5, 6, 3, 4, 46, 100 };
 
-            const int passwordLength = 13;
+            // Length
+            Console.WriteLine("Length: " + numbers.Length);
 
-            var buffer = new char[passwordLength];
-            for (var i = 0; i < passwordLength; i++)
-                buffer[i] = (char)('a' + random.Next(0, 26));
+            // IndexOf()
+            var index = Array.IndexOf(numbers, 9);
+            Console.WriteLine("Index of 9: " + index);
 
-            var password = new string(buffer);
+            // Clear()
+            Array.Clear(numbers, 0, 2);
 
-            Console.WriteLine(password);
+            Console.WriteLine("Effect of Clear()");
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+            // Copy()
+            var another = new int[3];
+            Array.Copy(numbers, another, 3);
+
+            Console.WriteLine("Effect of Copy()");
+            foreach (var number in another)
+            {
+                Console.WriteLine(number);
+            }
+
+            // Sort()
+            Array.Sort(numbers);
+
+            Console.WriteLine("Effect of Sort()");
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+            // Reverse()
+            Array.Reverse(numbers);
+
+            Console.WriteLine("Effect of Reverse()");
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+            //var random = new Random();
+
+            //const int passwordLength = 13;
+
+            //var buffer = new char[passwordLength];
+            //for (var i = 0; i < passwordLength; i++)
+            //    buffer[i] = (char)('a' + random.Next(0, 26));
+
+            //var password = new string(buffer);
+
+            //Console.WriteLine(password);
 
             //while (true)
             //{
