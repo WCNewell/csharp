@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -24,51 +25,116 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var numbers = new[] { 5, 6, 3, 4, 46, 100 };
+            var timeSpan = new TimeSpan(1, 2, 3);
+            var timeSpan1 = new TimeSpan(1, 0, 0);
 
-            // Length
-            Console.WriteLine("Length: " + numbers.Length);
+            var timeSpan2 = TimeSpan.FromHours(1);
 
-            // IndexOf()
-            var index = Array.IndexOf(numbers, 9);
-            Console.WriteLine("Index of 9: " + index);
+            var start = DateTime.Now;
+            var end = DateTime.Now.AddMinutes(2);
+            var duration = end - start;
+            Console.WriteLine("Duration: " + duration);
 
-            // Clear()
-            Array.Clear(numbers, 0, 2);
+            // Properties
+            Console.WriteLine("Minutes: " + timeSpan.Minutes);
+            Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
 
-            Console.WriteLine("Effect of Clear()");
-            foreach (var number in numbers)
-            {
-                Console.WriteLine(number);
-            }
+            // Add
+            Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+            Console.WriteLine("Subtract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
 
-            // Copy()
-            var another = new int[3];
-            Array.Copy(numbers, another, 3);
+            // To String
+            Console.WriteLine("ToString: " + timeSpan.ToString());
 
-            Console.WriteLine("Effect of Copy()");
-            foreach (var number in another)
-            {
-                Console.WriteLine(number);
-            }
+            // Parse
+            Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
 
-            // Sort()
-            Array.Sort(numbers);
 
-            Console.WriteLine("Effect of Sort()");
-            foreach (var number in numbers)
-            {
-                Console.WriteLine(number);
-            }
+            //var dateTime = new DateTime(2015, 1, 1);
+            //var now = DateTime.Now;
+            //var today = DateTime.Today;
 
-            // Reverse()
-            Array.Reverse(numbers);
+            //Console.WriteLine("Hour: " + now.Hour);
+            //Console.WriteLine("Minute: " + now.Minute);
 
-            Console.WriteLine("Effect of Reverse()");
-            foreach (var number in numbers)
-            {
-                Console.WriteLine(number);
-            }
+            //var tomorrow = now.AddDays(1);
+            //var yesterday = now.AddDays(-1);
+
+            //Console.WriteLine(now.ToLongDateString());
+            //Console.WriteLine(now.ToShortDateString());
+            //Console.WriteLine(now.ToLongTimeString());
+            //Console.WriteLine(now.ToShortTimeString());
+            //Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));
+
+            //var numbers = new List<int>() { 1, 2, 3, 4 };
+            //numbers.Add(1);
+            //numbers.AddRange(new int[3] { 5, 6, 7});
+
+            //foreach (var number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
+            //Console.WriteLine("Last Index of 1: " + numbers.LastIndexOf(1));
+
+            //for (var i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] == 1)
+            //        numbers.Remove(numbers[i]);
+            //}
+            //foreach (var number in numbers)
+            //    Console.WriteLine(number);
+
+            //numbers.Clear();
+
+            //Console.WriteLine("Count: " + numbers.Count);
+
+            //var numbers = new[] { 5, 6, 3, 4, 46, 100 };
+
+            //// Length
+            //Console.WriteLine("Length: " + numbers.Length);
+
+            //// IndexOf()
+            //var index = Array.IndexOf(numbers, 9);
+            //Console.WriteLine("Index of 9: " + index);
+
+            //// Clear()
+            //Array.Clear(numbers, 0, 2);
+
+            //Console.WriteLine("Effect of Clear()");
+            //foreach (var number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //// Copy()
+            //var another = new int[3];
+            //Array.Copy(numbers, another, 3);
+
+            //Console.WriteLine("Effect of Copy()");
+            //foreach (var number in another)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //// Sort()
+            //Array.Sort(numbers);
+
+            //Console.WriteLine("Effect of Sort()");
+            //foreach (var number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //// Reverse()
+            //Array.Reverse(numbers);
+
+            //Console.WriteLine("Effect of Reverse()");
+            //foreach (var number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
 
             //var random = new Random();
 
