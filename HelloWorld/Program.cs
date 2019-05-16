@@ -40,7 +40,22 @@ namespace HelloWorld
             Console.WriteLine("First Name: " + names[0]);
             Console.WriteLine("Last Name: " + names[1]);
 
-            fullName.Replace("William", "Clark");
+            Console.WriteLine(fullName.Replace("William", "Clark"));
+
+            //if (String.IsNullOrEmpty(" ".Trim()))
+            //    Console.WriteLine("Invalid");
+            
+            if (String.IsNullOrWhiteSpace(" "))
+                Console.WriteLine("Invalid");
+
+            var str = "46";
+            var age = Convert.ToByte(str);
+            Console.WriteLine(age);
+
+            float price = 29.95f;
+            Console.WriteLine(price.ToString("C"));
+            
+
 
 
             //var timeSpan = new TimeSpan(1, 2, 3);
