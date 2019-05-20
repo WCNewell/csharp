@@ -26,37 +26,39 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var fullName = "William Newell ";
-            Console.WriteLine("Trim: '{0}'", fullName.Trim());
-            Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper());
 
-            var index = fullName.IndexOf(' ');
-            var firstName = fullName.Substring(0, index);
-            var lastName = fullName.Substring(index + 1);
-            Console.WriteLine("First Name: " + firstName);
-            Console.WriteLine("Last Name: " + lastName);
+            var sentence = "This is going to be a really really really really really really really long text.";
+            var summary = StringUtility.SummarizeText(sentence);
+            Console.WriteLine(summary);
 
-            var names = fullName.Split(' ');
-            Console.WriteLine("First Name: " + names[0]);
-            Console.WriteLine("Last Name: " + names[1]);
+            //var fullName = "William Newell ";
+            //Console.WriteLine("Trim: '{0}'", fullName.Trim());
+            //Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper());
 
-            Console.WriteLine(fullName.Replace("William", "Clark"));
+            //var index = fullName.IndexOf(' ');
+            //var firstName = fullName.Substring(0, index);
+            //var lastName = fullName.Substring(index + 1);
+            //Console.WriteLine("First Name: " + firstName);
+            //Console.WriteLine("Last Name: " + lastName);
 
-            //if (String.IsNullOrEmpty(" ".Trim()))
+            //var names = fullName.Split(' ');
+            //Console.WriteLine("First Name: " + names[0]);
+            //Console.WriteLine("Last Name: " + names[1]);
+
+            //Console.WriteLine(fullName.Replace("William", "Clark"));
+
+            ////if (String.IsNullOrEmpty(" ".Trim()))
+            ////    Console.WriteLine("Invalid");
+
+            //if (String.IsNullOrWhiteSpace(" "))
             //    Console.WriteLine("Invalid");
-            
-            if (String.IsNullOrWhiteSpace(" "))
-                Console.WriteLine("Invalid");
 
-            var str = "46";
-            var age = Convert.ToByte(str);
-            Console.WriteLine(age);
+            //var str = "46";
+            //var age = Convert.ToByte(str);
+            //Console.WriteLine(age);
 
-            float price = 29.95f;
-            Console.WriteLine(price.ToString("C"));
-            
-
-
+            //float price = 29.95f;
+            //Console.WriteLine(price.ToString("C0"));
 
             //var timeSpan = new TimeSpan(1, 2, 3);
             //var timeSpan1 = new TimeSpan(1, 0, 0);
@@ -403,7 +405,7 @@ namespace HelloWorld
             //string firstName = "Clark";
             //bool isWorking = false;
         }
-
+        
         //public static void Increment(int number)
         //{
         //    number += 10;
