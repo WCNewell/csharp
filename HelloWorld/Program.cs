@@ -25,45 +25,95 @@ namespace HelloWorld
 
     partial class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
-            Directory.CreateDirectory(@"c:\temp\folder1");
+            var numbers = new List<int> {1, 2, 3, 4, 5, 6};
+            var smallests = GetSmallests(numbers, 3);
 
-
-            var files = Directory.GetFiles(@"c:\Users\Clark Newell\documents\webdev\udemy\csharp\HelloWorld", "*.*", SearchOption.AllDirectories);
-            foreach (var file in files)
-                Console.WriteLine(file);
-
-            var directories = Directory.GetDirectories(@"c:\Users\Clark Newell\documents\webdev\udemy\csharp\HelloWorld", "*.*", SearchOption.AllDirectories);
-            foreach (var directory in directories)
-                Console.WriteLine(directory);
-
-            Directory.Exists("...")
-
-
-            //var path = @"c:\somefile.jpg";
-            //File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
-            //File.Delete(path);
-            //if (File.Exists(path))
-            //{
-            //    // do something
-            //}
-            //var content = File.ReadAllText(path);
-
-            //var fileInfo = new FileInfo(path);
-            //fileInfo.CopyTo("...");
-            //fileInfo.Delete();
-            //if (fileInfo.Exists)
-            //{
-            //    // do something
-            //}
-
-            //fileInfo.OpenRead();
+            foreach (var number in smallests)
+                Console.WriteLine(number);
 
         }
 
-        
+        public static List<int> GetSmallests(List<int> list, int count)
+        {
+            var smallests = new List<int>();
+
+            while (smallests.Count < count)
+            {
+                var min = GetSmallest(list);
+                smallests.Add(min);
+                list.Remove(min);
+            }
+
+            return smallests;
+        }
+
+        public static int GetSmallest(List<int> list)
+        {
+            // Assume the first number is the smallest
+            var min = list[0];
+            for (var i = 1; i < list.Count; i++)
+            {
+                if (list[i] < min)
+                    min = list[i];
+            }
+
+            return min;
+        }
+
+    }
+        //var path = @"C:\Users\Clark Newell\documents\webdev\udemy\csharp\HelloWorld\HelloWorld.sln";
+
+        //var dotIndex = path.IndexOf('.');
+        //var extension = path.Substring(dotIndex);
+
+        //Console.WriteLine("Extension: " + Path.GetExtension(path));
+        //Console.WriteLine("File Name: " + Path.GetFileName(path));
+        //Console.WriteLine("File Name without Extension " + Path.GetFileNameWithoutExtension(path));
+        //Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path));
+
+        //Directory.CreateDirectory(@"c:\temp\folder1");
+
+
+        //var files = Directory.GetFiles(@"C:\Users\Clark Newell\documents\webdev\udemy\csharp\HelloWorld", "*.*", SearchOption.AllDirectories);
+        //foreach (var file in files)
+        //    Console.WriteLine(file);
+
+        //var directories = Directory.GetDirectories(@"C:\Users\Clark Newell\documents\webdev\udemy\csharp\HelloWorld", "*.*", SearchOption.AllDirectories);
+        //foreach (var directory in directories)
+        //    Console.WriteLine(directory);
+
+        //Directory.Exists("...");
+
+        //var directoryInfo = new DirectoryInfo("...");
+        //directoryInfo.GetFiles();
+        //directoryInfo.GetDirectories()
+
+
+        //var path = @"c:\somefile.jpg";
+        //File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
+        //File.Delete(path);
+        //if (File.Exists(path))
+        //{
+        //    // do something
+        //}
+        //var content = File.ReadAllText(path);
+
+        //var fileInfo = new FileInfo(path);
+        //fileInfo.CopyTo("...");
+        //fileInfo.Delete();
+        //if (fileInfo.Exists)
+        //{
+        //    // do something
+        //}
+
+        //fileInfo.OpenRead();
+
+        //}
+
+
         //static void Main(string[] args)
         //{
 
@@ -486,5 +536,5 @@ namespace HelloWorld
         //{
         //    person.Age += 10;
         //}
-    }
+    //}
 }
